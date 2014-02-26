@@ -6,11 +6,33 @@
 	<string>com.jack.t2ume</string>
 	<key>connections</key>
 	<dict>
+		<key>11EEFD04-D37B-4743-B100-C383970B722C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>68544CC5-C24F-4287-9AAB-35336739EA29</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>18DB2A42-6E51-43D4-A3A3-37B89437F724</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>9A60714F-A491-421A-B23B-9EFD971DE820</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>98CB1C76-F687-4FD9-B463-479D8B9F7CB7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>11EEFD04-D37B-4743-B100-C383970B722C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -114,13 +136,63 @@ print t2u.process(alfred_data)</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>tum</string>
+				<key>subtext</key>
+				<string>神马您去哪儿</string>
+				<key>text</key>
+				<string>请输入地址</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>98CB1C76-F687-4FD9-B463-479D8B9F7CB7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>64</integer>
+				<key>script</key>
+				<string>import t2u
+
+#此处一定填写你的推号或者推名，例如: t2u_id = "jack" or "123456"
+t2u_id = "test"
+#此处一定填写你的推码，例如: t2u_transfer_password = "111111"
+t2u_transfer_password = "test"
+
+#此处以下不用关注，也勿修改
+alfred_data = {}
+alfred_data['id'] = t2u_id
+alfred_data['passwd'] = t2u_transfer_password
+alfred_data['content'] = """{query}"""
+print t2u.process(alfred_data)</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>11EEFD04-D37B-4743-B100-C383970B722C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Version: 1.0
 
 如何使用:
 1. 在Workflows里选中推你。
-2. 点击中间的Script文件并双击进入编辑界面
+2. 点击中间的Script文件并双击进入编辑界面，一共有2个，上面是通用版，下面是针对地图的。
 3. 您应该能看到有以下文字：
 #此处一定填写你的推号或者推名，例如: t2u_id = "jack" or "123456"
 t2u_id = "test"
@@ -136,6 +208,11 @@ QQ: 530933208
 Email: support@t2u.me</string>
 	<key>uidata</key>
 	<dict>
+		<key>11EEFD04-D37B-4743-B100-C383970B722C</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
 		<key>18DB2A42-6E51-43D4-A3A3-37B89437F724</key>
 		<dict>
 			<key>ypos</key>
@@ -145,6 +222,11 @@ Email: support@t2u.me</string>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>98CB1C76-F687-4FD9-B463-479D8B9F7CB7</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
 		</dict>
 		<key>9A60714F-A491-421A-B23B-9EFD971DE820</key>
 		<dict>
