@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.jack.t2ume</string>
+	<key>connections</key>
+	<dict>
+		<key>18DB2A42-6E51-43D4-A3A3-37B89437F724</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9A60714F-A491-421A-B23B-9EFD971DE820</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>9A60714F-A491-421A-B23B-9EFD971DE820</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>68544CC5-C24F-4287-9AAB-35336739EA29</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>jack</string>
+	<key>description</key>
+	<string>the one of most convenient and intelligent push tool which focus on text and pictures, the best choice for transferring information from Desktop to iPhone(便捷智能的文本图片推送工具)</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>t2u.me(推你)</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>tu</string>
+				<key>subtext</key>
+				<string>幻想中...</string>
+				<key>text</key>
+				<string>请输入您想要推送的内容</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>18DB2A42-6E51-43D4-A3A3-37B89437F724</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>推你——推送结果</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>68544CC5-C24F-4287-9AAB-35336739EA29</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>64</integer>
+				<key>script</key>
+				<string>import t2u
+
+#此处一定填写你的推号或者推名，例如: t2u_id = "jack" or "123456"
+t2u_id = "jack"
+#此处一定填写你的推码，例如: t2u_transfer_password = "111111"
+t2u_transfer_password = "654321"
+
+#此处以下不用关注，也勿修改
+alfred_data = {}
+alfred_data['id'] = t2u_id
+alfred_data['passwd'] = t2u_transfer_password
+alfred_data['content'] = """{query}"""
+print t2u.process(alfred_data)</string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9A60714F-A491-421A-B23B-9EFD971DE820</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Version: 1.0</string>
+	<key>uidata</key>
+	<dict>
+		<key>18DB2A42-6E51-43D4-A3A3-37B89437F724</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>68544CC5-C24F-4287-9AAB-35336739EA29</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9A60714F-A491-421A-B23B-9EFD971DE820</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://t2u.me</string>
+</dict>
+</plist>
