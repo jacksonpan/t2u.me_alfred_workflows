@@ -174,7 +174,7 @@ t2u_transfer_password = "test"
 alfred_data = {}
 alfred_data['id'] = t2u_id
 alfred_data['passwd'] = t2u_transfer_password
-alfred_data['content'] = """{query}"""
+alfred_data['content'] = """map://{query}"""
 print t2u.process(alfred_data)</string>
 				<key>type</key>
 				<integer>3</integer>
